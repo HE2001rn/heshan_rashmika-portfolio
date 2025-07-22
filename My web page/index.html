@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heshan Rashmika – IT Support & Network Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <!-- 🎥 Subtle Video Background -->
+  <video autoplay muted loop id="bg-video">
+    <source src="cyber-bg2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Theme Toggle Button -->
+    <div class="theme-toggle-container">
+    <input type="checkbox" id="theme-toggle" class="toggle-input" />
+    <label for="theme-toggle" class="toggle-label">
+        <span class="toggle-indicator"></span>
+        <svg class="toggle-icon light" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5" />
+        <line x1="12" y1="2" x2="12" y2="4" />
+        <line x1="12" y1="20" x2="12" y2="22" />
+        <line x1="2" y1="12" x2="4" y2="12" />
+        <line x1="20" y1="12" x2="22" y2="12" />
+        </svg>
+        <svg class="toggle-icon dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 3h.01M12 21h.01M19.071 19.071l-.707-.707M4.929 4.929l-.707-.707M19.071 4.929l-.707.707M4.929 19.071l-.707-.707M12 5a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+        </svg>
+    </label>
+    </div>
+
+  <!-- Hero Section -->
+  <header class="hero fade-in">
+    <div class="container">
+      <img src="profile.jpeg" alt="Heshan Rashmika" class="profile-img" />
+      <h1>Heshan Rashmika</h1>
+      <p>IT Support & Network Engineer | Cybersecurity Enthusiast</p>
+      <div class="contact">
+        <a href="mailto:heshanrashmika1224@gmail.com" class="contact-btn">✉️ Email</a>
+        <a href="https://www.linkedin.com/in/heshan-rashmika-5b77012a8/" target="_blank" class="contact-btn">🔗 LinkedIn</a>
+        <a href="https://github.com/HE2001rn" target="_blank" class="contact-btn">💻 GitHub</a>
+        <a href="Heshan_Rashmika_CV.pdf" download class="contact-btn download-btn">⬇️ Download CV</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Heshan Rashmika | Seeduwa | 📞 +94 78 638 6950</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Theme Toggle
+    const toggle = document.getElementById('theme-toggle');
+    toggle.addEventListener('change', () => {
+      document.documentElement.setAttribute('data-theme', toggle.checked ? 'dark' : 'light');
+    });
+
+    // Fade-in Scroll Animation
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    faders.forEach(el => appearOnScroll.observe(el));
+  </script>
+</body>
+</html>
